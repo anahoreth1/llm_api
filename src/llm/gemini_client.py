@@ -1,6 +1,6 @@
 import google.generativeai as genai
 
-from src.llm.llm_client import LLMClient
+from src.llm.llm_client import LLMClient, 
 from src.consts import GEMINI_API_KEY, gemini_model_name
 
 
@@ -10,7 +10,7 @@ class GeminiClient(LLMClient):
         self.model_name = gemini_model_name
         self.gemini = genai.GenerativeModel(gemini_model_name)
 
-    def generate_content(self, prompt) -> str:
+    def generate_content(self, prompt) -> LLMCallResult:
         super().generate_content(prompt)
 
         response = self.gemini.generate_content(prompt)
