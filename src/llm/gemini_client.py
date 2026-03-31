@@ -10,7 +10,7 @@ class GeminiClient(LLMClient):
         self.model_name = gemini_model_name
         self.gemini = genai.GenerativeModel(gemini_model_name)
 
-    def generate_content(self, prompt) -> LLMCallResult:
+    async def generate_content(self, prompt) -> LLMCallResult:
         super().generate_content(prompt)
 
         response = self.gemini.generate_content(prompt)

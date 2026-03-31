@@ -15,7 +15,7 @@ class LLMClient(ABC):
         self.model_name = ""
 
     @abstractmethod
-    def generate_content(self, prompt) -> LLMCallResult:
+    async def generate_content(self, prompt) -> LLMCallResult:
         # Placeholder for actual LLM response generation logic
         print(
             f"Generated response for prompt: '{prompt}' using model: '{self.model_name}'"
